@@ -15,3 +15,17 @@ https://developer.mozilla.org/en-US/docs/Web/API/Selection
 
 http://www.cnblogs.com/rainman/archive/2011/02/27/1966482.html
 
+#### 写了一个更简单的方法：
+	```
+		function TextHighlight() {
+	    	if(!lock){
+	    		return false;
+	    	}
+	    	var sel = window.getSelection();
+			var span = document.createElement("span");
+	        span.style.background = "yellow";
+			sel.getRangeAt(0).surroundContents(span);
+			lock=false;
+  		}
+	```
+
